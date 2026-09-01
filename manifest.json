@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Fomo QuickBuy",
+  "version": "0.1.0",
+  "description": "Floating quick-buy overlay on gmgn.ai Solana token pages that drives your open fomo.family tab to execute the buy.",
+  "permissions": ["tabs", "storage"],
+  "host_permissions": [
+    "*://gmgn.ai/*",
+    "*://*.gmgn.ai/*",
+    "*://basedbot.app/*",
+    "*://*.basedbot.app/*",
+    "*://fomo.family/*",
+    "*://*.fomo.family/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Fomo QuickBuy"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://gmgn.ai/*", "*://*.gmgn.ai/*", "*://basedbot.app/*", "*://*.basedbot.app/*"],
+      "js": ["font-data.js", "content-gmgn.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["*://fomo.family/*", "*://*.fomo.family/*"],
+      "js": ["content-fomo.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

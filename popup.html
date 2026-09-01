@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    body { width: 240px; margin: 0; font-family: -apple-system, Segoe UI, Roboto, sans-serif;
+           background: #0f1115; color: #e6e8ec; font-size: 13px; padding: 12px; }
+    h1 { font-size: 13px; margin: 0 0 10px; color: #9fe870; }
+    .row { display: flex; align-items: center; justify-content: space-between; margin: 8px 0; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 6px; }
+    .on { background: #9fe870; } .off { background: #ff6b6b; }
+    label { user-select: none; }
+    .muted { color: #8a9099; font-size: 11px; }
+    .warn { color: #ffb020; font-size: 11px; margin-top: 6px; }
+    hr { border: none; border-top: 1px solid #252a33; margin: 10px 0; }
+    code { color: #cbd2dc; }
+  </style>
+</head>
+<body>
+  <h1>⚡ Fomo QuickBuy</h1>
+  <div class="row">
+    <span><span id="fomoDot" class="dot off"></span>fomo.family tab</span>
+    <span id="fomoState" class="muted">checking…</span>
+  </div>
+  <hr />
+  <div class="row">
+    <label for="dryrun">Dry run (don't click Buy)</label>
+    <input type="checkbox" id="dryrun" />
+  </div>
+  <div class="row">
+    <label for="focus">Focus fomo tab on buy</label>
+    <input type="checkbox" id="focus" />
+  </div>
+  <div id="armWarn" class="warn" style="display:none">⚠ Dry run OFF — buys fire real money instantly.</div>
+  <hr />
+  <div class="muted">Last: <span id="last">—</span></div>
+  <script src="popup.js"></script>
+</body>
+</html>

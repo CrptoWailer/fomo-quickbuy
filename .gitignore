@@ -1,0 +1,12 @@
+# build/share artifacts
+*.zip
+
+# font source (the woff2 is already embedded as base64 in font-data.js)
+fonts/
+
+# never commit — contains live auth tokens
+*.har
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
